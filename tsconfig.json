@@ -8,6 +8,8 @@
         "noUncheckedSideEffectImports": true,
         "importsNotUsedAsValues": "remove",
 
+        // "noImplicitAny": false,
+
         /* Absolute imports */
         "baseUrl": "./",
         "paths": {
