@@ -5,7 +5,7 @@ import { createServer as createHttpsServer, Server as HttpsServer } from 'https'
 import path from 'path';
 
 import { app } from '@/server';
-import { logger } from '@/utils/logger';
+import { logger } from '@/shared/utils/logger';
 
 dotenv.config();
 
@@ -14,8 +14,8 @@ const port = process.env.PORT || 3000;
 
 if (process.env.NODE_ENV === 'development') {
     const options = {
-        key: fs.readFileSync(path.join(__dirname, '/certs/localhost-key.pem')),
-        cert: fs.readFileSync(path.join(__dirname, '/certs/localhost.pem')),
+        key: fs.readFileSync(path.join(__dirname, '/shared/certs/localhost-key.pem')),
+        cert: fs.readFileSync(path.join(__dirname, '/shared/certs/localhost.pem')),
     };
     server = createHttpsServer(options, app);
     server.listen(port, () => {

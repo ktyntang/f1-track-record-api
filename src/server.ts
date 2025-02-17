@@ -3,10 +3,11 @@ import express, { Express } from 'express';
 import helmet from 'helmet';
 
 import { openAPIRouter } from '@/api-docs/openAPIRouter';
-import { httpLogger } from '@/middlewares/httpLogger';
 import { healthCheckRouter } from '@/routes/healthCheck/healthCheckRouter';
+import { motorsportAPIRouter } from '@/routes/motorsportApi/motorsportApiRouter';
+import { httpLogger } from '@/shared/middlewares/httpLogger';
 // import errorHandler from '@/common/middleware/errorHandler';
-import { syntaxErrorChecker } from '@/utils/httpHandlers';
+import { syntaxErrorChecker } from '@/shared/utils/httpHandlers';
 
 const app: Express = express();
 
@@ -33,6 +34,7 @@ app.use(httpLogger);
 
 // Routes
 app.use('/health-check', healthCheckRouter);
+app.use('/races', motorsportAPIRouter);
 
 // // Swagger UI
 app.use(openAPIRouter);
