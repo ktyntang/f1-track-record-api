@@ -1,0 +1,5 @@
+#run husky pre-push hook 
+    echo "Running tests..."
+    npm run test
+
+
