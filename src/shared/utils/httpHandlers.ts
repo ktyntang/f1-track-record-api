@@ -2,8 +2,8 @@ import { NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import { ZodError, ZodSchema } from 'zod';
 
-import { ResponseStatus, ServiceResponse } from '@/models/serviceResponse';
-import { logger } from '@/utils/logger';
+import { ResponseStatus, ServiceResponse } from '@/shared/models/serviceResponse';
+import { logger } from '@/shared/utils/logger';
 
 export const handleServiceResponse = (serviceResponse: ServiceResponse<unknown>, response: Response) => {
     return response.status(serviceResponse.statusCode).send(serviceResponse);
