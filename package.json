@@ -12,8 +12,7 @@
         "lint": "eslint . ",
         "lint:fix": "eslint --fix",
         "format": "prettier --config .prettierrc --write .",
-        "setup-env": "cp .env.example .env",
-        "quickstart": "npm run setup-env && npm install && npm run dev"
+        "setup-env": "cp .env.example .env"
     },
     "keywords": [],
     "author": "",
